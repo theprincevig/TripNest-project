@@ -1,0 +1,63 @@
+<% if (listing.reviews && listing.reviews.length > 0) { %>
+    <div class="show-reviews offset-2 mt-4 mb-2">
+        <h4>All Reviews</h4>            
+        <div class="row">
+        <% for (let review of listing.reviews) { %>
+            <div class="review-card col-4 ms-3 mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">@<%= review.author.username %></h5>
+                    <p class="card-rating-txt starability-result" data-rating="<%= review.rating %>"><%= review.rating %>stars</p>
+                    <p class="card-comment-txt"><%= review.comment %></p>
+                    <form class="mb-2" method="post" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                        <div class="delete-btn">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm10.618-3L15 2H9L7.382 4H3v2h18V4z"></path></svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+        </div>
+    </div>
+    <% if (listing.reviews.length > 2) { %>
+        <button class="offset-2 mb-4" id="show-more">...Show more</button>
+    <% } %>
+<% } %>
+
+<div class="review-container col-8 offset-2 mt-5">
+    <h4>Leave a Review</h4>
+    <form method="post" action="/listings/<%= listing._id %>/reviews" class="needs-validation" novalidate>
+        <!-- RATING -->
+        <div class="rating-container mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <!-- <input placeholder="give rating" value="3" type="number" class="form-control" name="review[rating]" required> -->
+            <fieldset class="starability-basic">
+                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                <label for="first-rate1" title="Terrible">1 star</label>
+                <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                <label for="first-rate2" title="Not good">2 stars</label>
+                <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                <label for="first-rate3" title="Average">3 stars</label>
+                <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                <label for="first-rate4" title="Very good">4 stars</label>
+                <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                <label for="first-rate5" title="Amazing">5 stars</label>
+            </fieldset>
+            <div class="invalid-feedback">Rating should be valid.</div>
+        </div>
+
+        <!-- COMMENT -->
+        <div class="comment-container mb-3">
+            <label for="comment" class="form-label">Comment</label>
+            <textarea placeholder="type comment..." name="review[comment]" rows="4" class="form-control" required></textarea>
+            <div class="invalid-feedback">Please give some comments for review.</div>
+        </div>
+
+        <!-- BUTTON -->
+        <button class="btn btn-outline-dark">Submit</button>
+    </form>
+</div>
+
+<script src="/js/reviewAutohide.js"></script>
