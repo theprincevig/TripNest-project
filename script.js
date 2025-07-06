@@ -89,7 +89,7 @@ app.use((req, res, next) => {
 
 
 // default page for wanderlust website...
-app.get("/wanderlust", (req, res) => {
+app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
