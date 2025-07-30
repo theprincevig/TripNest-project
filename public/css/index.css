@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Kaushan+Script&family=Playwrite+AU+NSW:wght@100..400&display=swap');
 
 * {
     margin: 0;
@@ -7,10 +7,10 @@
     transition: 0.3s;
 }
 body {
-    background: linear-gradient(to top, #7F57F1, #e0e0e0);
-    color: white;
     width: 100%;
     height: 100dvh;
+    background: linear-gradient(to top, #7F57F1, #e0e0e0);
+    color: white;
     font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
@@ -18,8 +18,8 @@ body {
 }
 
 .container {
-    width: 50%;
-    padding: 10px 20px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +27,10 @@ body {
 }
 
 h1 {
-    margin-bottom: 5%;
+    font-family: 'Kaushan Script', sans-serif;
+    font-size: clamp(1.2rem,4vw, 2.4rem);
+    letter-spacing: 0.2rem;
+    margin-bottom: 1.5rem;
     text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
     animation: motion 1.5s infinite alternate;
 }
@@ -36,23 +39,16 @@ h1 {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-10px);
+        transform: translateY(-8px);
     }
 }
 
-button a {
-    font-family: 'Sour Gummy', sans-serif;
-    font-weight: 600;
-    font-size: 1.5em;
-    text-decoration: none;
-    color: black;
-}
 button {
-    padding: 5px 12px;
+    padding: 0.3rem 1rem;
     border: none;
     outline: none;
     margin-bottom: 1rem;
-    border-radius: 1em;
+    border-radius: 1rem;
     border: 1px solid transparent;
     box-shadow: 0 6px 9px rgba(0, 0, 0, 0.25);
     background: white;
@@ -63,10 +59,22 @@ button:hover {
     background: transparent;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
+
+button a {
+    font-family: 'Hedvig Letters Sans', sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    text-decoration: none;
+    color: black;
+}
 button:hover a { color: white; }
+
 
 .dashboard-lnk {
     color: black;
+    font-family: 'Playwrite Australia', sans-serif;
+    font-size: clamp(0.65rem, 2vw, 1rem);
+    font-weight: 600;
     text-decoration: none;
 }
 .dashboard-lnk:hover { text-decoration: underline; }
