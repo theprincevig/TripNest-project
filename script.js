@@ -24,14 +24,13 @@ const reviewRouter = require('./routes/review.js');
 const userRouter = require('./routes/user.js');
 
 const mongoose = require('mongoose');
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-// const DB_URL = process.env.ATLASDB_URL;
+const DB_URL = process.env.ATLASDB_URL;
 
 main().then(() => console.log("connection successful"))
 .catch((err) => console.log(err));
 
 async function main() {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(DB_URL);
 }
 
 app.set("view engine", "ejs");
@@ -44,7 +43,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 
 const store = MongoStore.create({
-    mongoUrl: MONGO_URL,
+    mongoUrl: DB_URL,
     crypto: {
         secret: process.env.SECRET
     },
