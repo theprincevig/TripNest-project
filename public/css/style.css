@@ -1,6 +1,7 @@
+/* Import Google Fonts for use throughout the site */
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Arizonia&family=Comfortaa:wght@300..700&family=Henny+Penny&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Global styles */
+/* Reset default browser styles and set base font */
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +10,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* NAV-BAR */
+/* ========================= NAVBAR ========================= */
+
+/* Navbar container styles: layout, position, background */
 .navbar-container {
     width: 100%;
     height: clamp(7rem, 15vw, 10rem);
@@ -25,7 +28,7 @@
     z-index: 1000;
 }
 
-/* Logo container in navbar */
+/* Logo section in navbar */
 .navbar-container .navbar-logo {
     width: clamp(20%, 20vw, 25%);
     height: 100%;
@@ -35,7 +38,7 @@
     justify-content: center;
 }
 
-/* Logo image */
+/* Logo image sizing */
 .navbar-logo img {
     width: clamp(2rem, 5vw, 4rem);
 }
@@ -49,7 +52,7 @@
     letter-spacing: 0.1rem;
 }
 
-/* Middle section of navbar */
+/* Middle section of navbar: contains search and buttons */
 .navbar-container .mid-container {
     width: 50%;
     height: 100%;
@@ -61,7 +64,7 @@
     row-gap: 1rem;
 }
 
-/* Home and New Post buttons */
+/* Home and New buttons layout */
 .home-and-new-btn {
     display: flex;
     align-items: center;
@@ -70,7 +73,7 @@
     gap: clamp(1rem, 2vw, 2rem);
 }
 
-/* Button styling inside form */
+/* Button styles inside forms */
 .home-and-new-btn form button {
     border: none;
     outline: none;
@@ -79,9 +82,11 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+/* Button hover effect */
 form button:hover { transform: translateY(-4px); }
 
-/* Search bar styling */
+/* Search bar container styles */
 .search-bar {
     width: 90%;
     height: clamp(2.5rem, 6vw, 3.5rem);
@@ -94,7 +99,7 @@ form button:hover { transform: translateY(-4px); }
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Input field inside search bar */
+/* Search input field styles */
 .search-bar input {
     width: 100%;
     height: 100%;
@@ -104,7 +109,7 @@ form button:hover { transform: translateY(-4px); }
     font-size: clamp(0.5rem, 1.4vw, 1.2rem);
 }
 
-/* Search button */
+/* Search button styles */
 .search-bar .search-btn {
     width: clamp(1.5rem, 5vw, 3.5rem);
     height: 100%;
@@ -119,10 +124,10 @@ form button:hover { transform: translateY(-4px); }
     cursor: pointer;
 }
 
-/* Icon inside search button */
+/* Search icon size */
 .search-btn span { font-size: clamp(0.5rem, 2vw, 1.8rem); }
 
-/* User container on navbar right */
+/* User section in navbar */
 .navbar-container .user-container {
     width: clamp(20%, 20vw, 25%);
     height: 100%;
@@ -132,7 +137,7 @@ form button:hover { transform: translateY(-4px); }
     justify-content: center;
 }
 
-/* Profile avatar button */
+/* User avatar/dropdown logo styles */
 .user-container .user-dropdown-logo {
     width: clamp(1.5rem, 4vw, 3rem);
     height: clamp(1.5rem, 4vw, 3rem);
@@ -143,15 +148,17 @@ form button:hover { transform: translateY(-4px); }
     border: 1px solid #bbbbbb;
     cursor: pointer;
 }
+
+/* Avatar hover effect */
 .user-dropdown-logo:hover { background: #eeeeee; }
 
-/* Icon inside profile avatar */
+/* Avatar icon size */
 .user-dropdown-logo span { font-size: clamp(1.2rem, 3vw, 2rem); }
 
-/* Dropdown menu initially hidden */
+/* Dropdown menu hidden by default */
 .user-dropdown-menu { display: none; }
 
-/* Dropdown menu active state */
+/* Dropdown menu active state styles */
 .user-dropdown-menu.active {
     background: #ffffff;
     border-radius: 1.2rem;
@@ -167,14 +174,381 @@ form button:hover { transform: translateY(-4px); }
     box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Links inside dropdown menu */
+/* Dropdown menu links */
 .user-dropdown-menu a {
     font-size: clamp(0.5rem, 3vw, 1rem);
     padding: 0.5rem;
     text-decoration: none;
     color: black;
 }
+
+/* Dropdown link hover effect */
 .user-dropdown-menu a:hover { background: #f1f1f1; }
 
 /* Divider line in dropdown */
 .user-dropdown-menu .divider { border-bottom: 1px solid #e0e0e0; }
+
+/* ========================= MAIN CONTENT ========================= */
+
+/* Body layout and spacing to account for fixed navbar */
+body {
+    height: 100%;
+    margin-top: clamp(8rem, 20vw, 12rem);
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+/* Main content area */
+.content {
+    flex: 1;
+    height: 100dvh;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Headings for create/edit listing pages */
+.create-listing-heading { font-size: clamp(1rem, 4vw, 1.8rem); }
+.edit-listing-heading { font-size: clamp(1rem, 5vw, 1.8rem); }
+
+/* ========================= FOOTER ========================= */
+
+/* Footer container styles */
+.footer-container {
+    width: 100%;
+    height: clamp(5rem, 30vw, 8rem);
+    background: #EFEFEF;
+    bottom: 0;
+}
+
+/* Footer info layout */
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    row-gap: 0.5rem;
+}
+
+/* Footer sections width */
+.footer-info-socials, .footer-info-links, .footer-info-brand-name { width: 100%; }
+
+/* Brand name styling */
+.footer-info-brand-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(0.85rem, 3vw, 1rem);
+}
+
+/* Social icons layout */
+.footer-info-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.7rem;
+}
+
+/* Social icon size */
+.footer-info-socials i { font-size: clamp(0.8rem, 4vw, 1.2rem); }
+
+/* Footer links layout */
+.footer-info-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.1rem;
+}
+
+/* Footer link styles */
+.footer-info-links a {
+    text-decoration: none;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    color: black;
+}
+
+/* Footer link hover effect */
+.footer-info-links a:hover { text-decoration: underline; }
+
+/* ========================= CARD ========================= */
+
+/* Card container styles */
+.card {
+    border: none !important;
+    margin-bottom: 1.5rem;
+    overflow: hidden !important;
+}
+
+/* Card image styles */
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+/* Card body spacing */
+.card-body {
+    padding: 0;
+    margin-top: 1rem;
+}
+
+/* Card heading styles */
+.card-heading {
+    font-weight: 600;
+    margin: 0 0 1rem 1rem;
+}
+
+/* Card text styles */
+.card-text {
+    margin-left: 1rem;
+    font-size: clamp(0.8rem, 5vw, 1rem);
+}
+
+/* Card price styles */
+.card .card-price {
+    margin-left: 1.5rem;
+    font-size: clamp(0.8rem, 5vw, 1rem);
+}
+
+/* Remove underline from card links */
+.card-listing-link { text-decoration: none; }
+
+/* Card image overlay for hover effect */
+.card-img-overlay h4 {
+    font-weight: 600;
+    color: #e0e0e0ea;
+    transform: scale(0.9);
+}
+
+/* Overlay heading scale on hover */
+.card-img-overlay:hover h4 { transform: scale(1); }
+
+/* Overlay container styles */
+.card-img-overlay {
+    width: 100%;
+    height: 77.95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    border-radius: 1rem !important;
+}
+
+/* Show overlay on card hover */
+.card:hover .card-img-overlay {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+}
+
+/* ========================= CREATE/EDIT LISTING BUTTONS ========================= */
+
+/* General button styles */
+.btn {
+    background: #7F57F1;
+    border: none;
+    outline: none;
+    font-size: clamp(0.7rem, 3vw, 1rem);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* Button hover effect */
+.btn:hover { background: #5A3DB3; }
+
+/* ========================= SHOW PAGE ========================= */
+
+/* Card heading size for show page */
+.card-heading { font-size: clamp(1rem, 5vw, 2rem); }
+
+/* Show page image height */
+.show-img { height: 50dvh; }
+
+/* Card text styles for show page */
+.card-txt {
+    margin-left: 1.5rem;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-weight: 700;
+}
+
+/* Card owner styles */
+.card-owner {
+    font-size: clamp(0.5rem, 3vw, 1rem);
+    font-weight: 500;
+    margin-left: 1rem;
+    display: inline-flex;
+    border-radius: 10rem;
+    padding: 0.2rem 0.7rem;
+    box-shadow: 0 0.3rem 0.75rem rgba(0, 0, 0, 0.3);
+}
+
+/* Card details spacing */
+.card-price, .card-description, .card-location, .card-country { margin: 0 0 0.8rem 1.8rem; }
+
+/* Button group layout for show page */
+.btns {
+    width: clamp(13.5rem, 40vw, 20rem) !important;
+    height: clamp(1.3rem, 20vw, 3.5rem) !important;
+    margin-left: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Button link styles */
+.btns button a {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(0.8rem, 3.5vw, 1.3rem) !important;
+    font-weight: 600;
+}
+
+/* Button styles in button group */
+.btns button {
+    width: 35%;
+    height: 80%;
+    border: none;
+    outline: none;
+    border-radius: 0.8rem;
+    background: #7F57F1;
+}
+
+/* Form styles in button group */
+.btns form {
+    width: 35%;
+    height: 80%;
+}
+
+/* Form button styles in button group */
+.btns form button {
+    width: 100%;
+    height: 100%;
+    color: white;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 3.5vw, 1.2rem);
+    background: #7F57F1;
+}
+
+/* Button hover effect in button group */
+.btns button:hover {
+    background: #5A3DB3;
+    transform: translateY(-5px);
+}
+
+/* ========================= REVIEW ========================= */
+
+/* Review card container styles */
+.review-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+}
+
+/* Review card title styles */
+.card-title {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1rem, 5vw, 1.2rem);
+}
+
+/* Review rating and comment text styles */
+.card-rating-txt { font-size: clamp(1rem, 4vw, 1.5rem); }
+.card-comment-txt { font-size: clamp(0.8rem, 3.5vw, 1rem); }
+
+/* Review form button styles */
+.review-container form .btn {
+    border: 1px solid black;
+    background: transparent;
+}
+
+/* Review form button hover effect */
+.review-container form .btn:hover {
+    transform: none;
+    background: #000;
+}
+
+/* Delete button alignment */
+.delete-btn { text-align: right; }
+
+/* Delete button styles in review card */
+.review-card .delete-btn button {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    border: none;
+    outline: none;
+    background: none;
+    transform: none;
+}
+
+/* Delete icon styles */
+.delete-btn svg {
+    width: 100%;
+    height: 100%;
+    padding: 0.2rem;
+    border-radius: 50%;
+    opacity: 0;
+    cursor: pointer;
+    fill: grey;
+}
+
+/* Show delete icon on review card hover */
+.review-card:hover form svg { opacity: 1; }
+
+/* Delete icon hover effect */
+.delete-btn svg:hover {
+    fill: black;
+    transition: 150ms;
+    background: #d6d6d6;
+}
+
+/* Show more reviews container */
+.show-reviews {
+    height: 18rem;
+    overflow: hidden;
+}
+
+/* Expand reviews container when open */
+.show-reviews.open { height: auto; }
+
+/* Show more button styles */
+#show-more {
+    position: relative;
+    z-index: 1;
+    left: 52%;
+    font-size: clamp(0.5rem, 3.5vw, 1rem);
+    color: #505050e3;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* Responsive review card for mobile */
+@media (max-width: 767.98px) { /* Bootstrap md breakpoint */
+  .review-card {
+    max-width: 90%;
+    flex: 0 0 100%;
+  }
+}
+
+/* ========================= LOGIN/SIGNUP ========================= */
+
+/* Headings for login/signup pages */
+.login-heading { font-size: clamp(1rem, 6vw, 1.8rem); }
+.signup-heading { font-size: clamp(1rem, 5vw, 1.8rem); }
+
+/* Username input and label styles */
+.username-container input { font-size: clamp(0.8rem, 2vw, 1rem); }
+.username-container label { font-size: clamp(0.8rem, 3.5vw, 1.15rem); }
+
+/* Password input and label styles */
+.password-container input { font-size: clamp(0.8rem, 2vw, 1rem); }
+.password-container label { font-size: clamp(0.8rem, 3.5vw, 1.15rem); }
+
+/* Email input and label styles */
+.email-container input { font-size: clamp(0.8rem, 2vw, 1rem); }
+.email-container label { font-size: clamp(0.8rem, 3.5vw, 1.15rem); }
