@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="../photos/logo.png">
+    <link rel="icon" type="image/png" href="../../photos/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TripNest</title>
@@ -9,35 +9,43 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 <body>
+    <!-- Include navigation bar -->
     <%- include("../includes/navbar.ejs") %>
+
+    <!-- Include flash message alerts -->
     <%- include("../includes/flash.ejs") %>
+
+    <!-- Main content starts here -->
     <main class="content">
         <div class="row">
             <div class="col-8 offset-2">
-                <h2>Edit Listing</h2>
+                <!-- Heading for Edit Listing Page -->
+                <h2 class="edit-listing-heading">Edit Listing</h2>
+
+                <!-- Listing Edit Form -->
                 <form method="post" action="/listings/<%= listing._id %>?_method=PATCH" class="needs-validation" novalidate enctype="multipart/form-data">
-                    <!-- TITLE -->
+                    
+                    <!-- Title input -->
                     <div class="title-container mb-3">
                         <label for="title" class="form-label">Title</label>
                         <input placeholder="edit title" name="listing[title]" type="text" value="<%= listing.title %>" class="form-control" required>
                         <div class="invalid-feedback">Enter a valid title to continue.</div>
                     </div>
 
-                    <!-- TEXTAREA -->
+                    <!-- Description textarea -->
                     <div class="txtarea-container mb-3">
                         <label for="description" class="form-label">Description</label>
                         <textarea placeholder="edit your description..." name="listing[description]" type="text" class="form-control" required><%= listing.description %></textarea>
                         <div class="invalid-feedback">Please enter a description.</div>
                     </div>
 
-                    <!-- IMAGE -->
+                    <!-- Image upload -->
                     <div class="img-container mb-3">
                         <label for="image" class="form-label">Update Image</label>
                         <input placeholder="change image" name="listing[image]" type="file" class="form-control">
-                        <!-- <div class="invalid-feedback">You can't remove image link or URL.</div> -->
                     </div>
 
-                    <!-- PRICE -->
+                    <!-- Price input -->
                     <div class="price-container mb-3">
                         <label for="price" class="form-label">Price</label>
                         <input placeholder="change price" name="listing[price]" type="number" value="<%= listing.price %>" class="form-control" required>
@@ -45,13 +53,14 @@
                     </div>
 
                     <div class="row">
-                        <!-- LOCATION -->
+                        <!-- Location input -->
                         <div class="location-container mb-3 col-md-8">
                             <label for="location" class="form-label">Location</label>
                             <input placeholder="edit location" name="listing[location]" type="text" value="<%= listing.location %>" class="form-control" required>
                             <div class="invalid-feedback">Location should be valid.</div>
                         </div>
-                        <!-- COUNTRY -->
+
+                        <!-- Country input -->
                         <div class="country-container mb-3 col-md-4">
                             <label for="country" class="form-label">Country</label>
                             <input placeholder="change country name" name="listing[country]" type="text" value="<%= listing.country %>" class="form-control" required>
@@ -59,13 +68,20 @@
                         </div>
                     </div>
 
+                    <!-- Submit button -->
                     <button class="btn btn-dark">Confirm</button>
                 </form>
             </div>
         </div>
     </main>
+
+    <!-- Include footer -->
     <%- include("../includes/footer.ejs") %>
 </body>
+
+<!-- Import Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+<!-- Client-side form validation script -->
 <script src="/js/validation.js"></script>
 </html>

@@ -1,23 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Kaushan+Script&family=Playwrite+AU+NSW:wght@100..400&display=swap');
 
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: 0.3s;
+    transition: 0.3s; /* Smooth transitions for all elements */
 }
+
 body {
     width: 100%;
-    height: 100dvh;
-    background: linear-gradient(to top, #7F57F1, #e0e0e0);
+    height: 100dvh; /* Full viewport height, dynamic on mobile */
+    background: linear-gradient(to top, #7F57F1, #e0e0e0); /* Purple to light gray gradient */
     color: white;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Fallback in case other fonts fail */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Center content */
 }
 
 .container {
+    /* Centers all content vertically and horizontally */
     width: 100%;
     height: 100%;
     display: flex;
@@ -26,14 +29,22 @@ body {
     align-items: center;
 }
 
+.container img {
+    /* Responsive logo/image sizing */
+    width: clamp(5rem, 20vw, 10rem);
+}
+
 h1 {
+    /* Title styling */
     font-family: 'Kaushan Script', sans-serif;
-    font-size: clamp(1.2rem,4vw, 2.4rem);
+    font-size: clamp(1.2rem, 4vw, 2.4rem);
     letter-spacing: 0.2rem;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
-    animation: motion 1.5s infinite alternate;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for better readability */
+    animation: motion 1.5s infinite alternate; /* Bouncing animation */
 }
+
+/* Bounce animation for h1 */
 @keyframes motion {
     0% {
         transform: translateY(0);
@@ -44,6 +55,7 @@ h1 {
 }
 
 button {
+    /* Styling for CTA button */
     padding: 0.3rem 1rem;
     border: none;
     outline: none;
@@ -54,27 +66,35 @@ button {
     background: white;
     cursor: pointer;
 }
+
 button:hover {
+    /* Hover effect for button */
     border: 1px solid white;
     background: transparent;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 button a {
+    /* Link inside button */
     font-family: 'Hedvig Letters Sans', sans-serif;
     font-weight: 600;
     font-size: clamp(0.8rem, 2vw, 1.2rem);
     text-decoration: none;
     color: black;
 }
-button:hover a { color: white; }
-
+button:hover a {
+    color: white;
+}
 
 .dashboard-lnk {
+    /* Dashboard link text below button */
     color: black;
     font-family: 'Playwrite Australia', sans-serif;
     font-size: clamp(0.65rem, 2vw, 1rem);
     font-weight: 600;
     text-decoration: none;
 }
-.dashboard-lnk:hover { text-decoration: underline; }
+
+.dashboard-lnk:hover {
+    text-decoration: underline;
+}

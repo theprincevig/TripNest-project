@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Arizonia&family=Comfortaa:wght@300..700&family=Henny+Penny&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -24,8 +25,8 @@
     z-index: 1000;
 }
 
+/* Logo container in navbar */
 .navbar-container .navbar-logo {
-    /* border: solid; */
     width: clamp(20%, 20vw, 25%);
     height: 100%;
     padding: 1rem;
@@ -34,11 +35,12 @@
     justify-content: center;
 }
 
+/* Logo image */
 .navbar-logo img {
     width: clamp(2rem, 5vw, 4rem);
-    
 }
 
+/* Logo text styling */
 .navbar-logo h4 {
     font-family: 'Arizonia', sans-serif;
     font-size: clamp(1rem, 2vw, 1.8rem);
@@ -47,8 +49,8 @@
     letter-spacing: 0.1rem;
 }
 
+/* Middle section of navbar */
 .navbar-container .mid-container {
-    /* border: solid; */
     width: 50%;
     height: 100%;
     display: flex;
@@ -59,6 +61,7 @@
     row-gap: 1rem;
 }
 
+/* Home and New Post buttons */
 .home-and-new-btn {
     display: flex;
     align-items: center;
@@ -67,6 +70,7 @@
     gap: clamp(1rem, 2vw, 2rem);
 }
 
+/* Button styling inside form */
 .home-and-new-btn form button {
     border: none;
     outline: none;
@@ -76,8 +80,8 @@
     cursor: pointer;
 }
 form button:hover { transform: translateY(-4px); }
-/* form button:active { opacity: 0.5; } */
 
+/* Search bar styling */
 .search-bar {
     width: 90%;
     height: clamp(2.5rem, 6vw, 3.5rem);
@@ -89,6 +93,8 @@ form button:hover { transform: translateY(-4px); }
     background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
+
+/* Input field inside search bar */
 .search-bar input {
     width: 100%;
     height: 100%;
@@ -97,10 +103,11 @@ form button:hover { transform: translateY(-4px); }
     overflow: hidden;
     font-size: clamp(0.5rem, 1.4vw, 1.2rem);
 }
+
+/* Search button */
 .search-bar .search-btn {
     width: clamp(1.5rem, 5vw, 3.5rem);
     height: 100%;
-    /* padding: 0 0.5rem; */
     border-radius: 50%;
     border: none;
     outline: none;
@@ -112,18 +119,20 @@ form button:hover { transform: translateY(-4px); }
     cursor: pointer;
 }
 
+/* Icon inside search button */
 .search-btn span { font-size: clamp(0.5rem, 2vw, 1.8rem); }
 
+/* User container on navbar right */
 .navbar-container .user-container {
-    /* border: solid; */
     width: clamp(20%, 20vw, 25%);
     height: 100%;
     padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
+
+/* Profile avatar button */
 .user-container .user-dropdown-logo {
     width: clamp(1.5rem, 4vw, 3rem);
     height: clamp(1.5rem, 4vw, 3rem);
@@ -136,10 +145,13 @@ form button:hover { transform: translateY(-4px); }
 }
 .user-dropdown-logo:hover { background: #eeeeee; }
 
+/* Icon inside profile avatar */
 .user-dropdown-logo span { font-size: clamp(1.2rem, 3vw, 2rem); }
 
+/* Dropdown menu initially hidden */
 .user-dropdown-menu { display: none; }
 
+/* Dropdown menu active state */
 .user-dropdown-menu.active {
     background: #ffffff;
     border-radius: 1.2rem;
@@ -155,275 +167,14 @@ form button:hover { transform: translateY(-4px); }
     box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.25);
 }
 
+/* Links inside dropdown menu */
 .user-dropdown-menu a {
     font-size: clamp(0.5rem, 3vw, 1rem);
     padding: 0.5rem;
     text-decoration: none;
     color: black;
 }
-.user-dropdown-menu a:hover {
-    background: #f1f1f1;
-}
+.user-dropdown-menu a:hover { background: #f1f1f1; }
 
-.user-dropdown-menu .divider {
-    border-bottom: 1px solid #e0e0e0;
-}
-/* END */
-
-/* MAIN CONTENT */
-body {
-    height: 100%;
-    margin-top: clamp(8rem, 20vw, 12rem);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    /* text-align: center; */
-}
-
-.content {
-    flex: 1;
-    height: 100dvh;
-    padding: 0 10px;
-    margin-bottom: 20px;
-}
-
-/* END */
-
-/* FOOTER */
-.footer-container {
-    width: 100%;
-    height: clamp(5rem, 30vw, 8rem);
-    background: #EFEFEF;
-    bottom: 0;
-}
-
-.footer-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.8rem;
-    row-gap: 0.5rem;
-}
-
-.footer-info-socials, .footer-info-links, .footer-info-brand-name { width: 100%; }
-
-.footer-info-brand-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: clamp(0.85rem, 3vw, 1rem);
-}
-
-.footer-info-socials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 0.7rem;
-}
-.footer-info-socials i { font-size: clamp(0.8rem, 4vw, 1.2rem); }
-
-.footer-info-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 0.1rem;
-}
-.footer-info-links a {
-    text-decoration: none;
-    font-size: clamp(0.75rem, 2vw, 1rem);
-    color: black;
-}
-.footer-info-links a:hover { text-decoration: underline; }
-/* END */
-
-/* CARD */
-.card {
-    border: none !important;
-    margin-bottom: 20px;
-    overflow: hidden !important;
-}
-
-.card-img-top {
-    border-radius: 1rem !important;
-    width: 100% !important;
-    object-fit: cover !important;
-}
-
-.card-body {
-    padding: 0;
-    margin-top: 10px;
-}
-
-.card-heading {
-    font-weight: 600;
-    margin: 0 0 10px 10px;
-}
-
-.card-text { margin-left: 10px; }
-.card .card-price { margin-left: 20px; }
-.card-listing-link { text-decoration: none; }
-
-/* card overlay */
-.card-img-overlay h4 {
-    font-weight: 600;
-    color: #e0e0e0ea;
-    transform: scale(0.9);
-}
-.card-img-overlay:hover h4 { transform: scale(1); }
-
-.card-img-overlay {
-    width: 100%;
-    height: 77.95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    border-radius: 1rem !important;
-}
-.card:hover .card-img-overlay {
-    opacity: 1;
-    backdrop-filter: blur(4px);
-}
-/* end overlay*/
-/* END */
-
-/* CREATE NEW & EDIT LISTING */
-.btn {
-    background: #7F57F1;
-    border: none;
-    outline: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-.btn:hover { background: #5A3DB3; }
-/* END */
-
-/* SHOW PAGE */
-.show-img { height: 50vh; }
-
-.card-txt {
-    margin-left: 20px;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.card-owner {
-    font-weight: 500;
-    margin-left: 1rem;
-}
-
-.card-price, .card-description, .card-location, .card-country { margin-left: 30px; }
-
-.btns {
-    width: 50%;
-    height: 50px;
-    margin: 0 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
-
-.btns button a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px !important;
-    font-weight: 600;
-}
-.btns button {
-    width: 10%;
-    height: 90%;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    background: #7F57F1;
-}
-
-.btns form {
-    width: 10%;
-    height: 90%;
-}
-.btns form button {
-    width: 100%;
-    height: 100%;
-    color: white;
-    border: none;
-    outline: none;
-    font-weight: 600;
-    font-size: 18px;
-    background: #7F57F1;
-}
-
-.btns button:hover {
-    background: #5A3DB3;
-    transform: translateY(-5px);
-}
-/* END */
-
-/* REVIEW */
-.review-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-}
-
-.card-title { margin-bottom: 1.5rem; }
-
-.review-container form .btn {
-    border: 1px solid black;
-    background: transparent;
-}
-.review-container form .btn:hover {
-    transform: none;
-    background: #000;
-}
-
-/* review delete button */
-.delete-btn { text-align: right; }
-
-.review-card .delete-btn button {
-    width: 2em;
-    height: 2em;
-    margin-right: 1rem;
-    border: none;
-    outline: none;
-    background: none;
-    transform: none;
-}
-
-.delete-btn svg {
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    border-radius: 99px;
-    opacity: 0;
-    cursor: pointer;
-    fill: grey;
-}
-
-.review-card:hover form svg { opacity: 1; }
-.delete-btn svg:hover {
-    fill: black;
-    transition: 150ms;
-    background: #d6d6d6;
-}
-
-/* review show more */
-.show-reviews {
-    height: 17em;
-    overflow: hidden;
-}
-.show-reviews.open { height: auto; }
-#show-more {
-    position: relative;
-    z-index: 1;
-    left: 52%;
-    color: #505050e3;
-    border: none;
-    outline: none;
-    background: none;
-}
-/* END */
+/* Divider line in dropdown */
+.user-dropdown-menu .divider { border-bottom: 1px solid #e0e0e0; }

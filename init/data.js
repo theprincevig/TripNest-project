@@ -1,3 +1,10 @@
+// Import the Listing model if needed in future operations
+// const Listing = require('../models/listing'); // (Optional if used in a seeding script)
+
+// ==========================
+// Demo / Seed Listing Data
+// ==========================
+
 const listingData = [
   {
     title: "Cozy Mountain Cabin",
@@ -221,4 +228,5 @@ const listingData = [
   }
 ];
 
+// Exporting listing data for use in other files (e.g., seed script)
 module.exports = { data: listingData };

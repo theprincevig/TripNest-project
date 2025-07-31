@@ -5,16 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TripNest</title>
+    <!-- External CSS for error page styling -->
     <link rel="stylesheet" href="/css/error.css">
 </head>
 <body>
     <div class="container">
+
+        <!-- Image box containing error emoji and status code -->
         <div class="img-box">
+            <!-- Sad emoji image to visually indicate error -->
             <img src="../photos/sad_emoji.png" alt="error-photo">
+
+            <!-- Dynamic error status (e.g. 404, 500) -->
             <h1 class="err-status-txt"><%= status %></h1>
         </div>
+
+        <!-- Dynamic error message rendered by the server -->
         <h4 class="err-msg"><%= message %></h4>
+
+        <!-- Optional Go Back button (currently commented out) -->
         <!-- <button>Go Back</button> -->
+
     </div>
 </body>
 </html>
